@@ -44,3 +44,7 @@
     background-color: rgb(230, 65, 65);
     color: rgb(255, 255, 255);
 }
+
+.done{
+    text-decoration: line-through;
+}
