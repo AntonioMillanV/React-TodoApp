@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import '../css/Form.css';
 
-const Form = () => {
+const Form = (props) => {
   const [description, setDescription] = useState("");
+
+  const handleAddTodo = (e)=>{
+    e.preventDefault();
+    const newTodo = {title: e.target.firstChild.value, done: false};
+    props.updateTodo(e,newTodo);
+    e.target.reset();
+  }
+
   return (
     <form 
       className="form" 
+      onSubmit={handleAddTodo}
     >
       <input 
         className="form-input" 
@@ -15,7 +25,8 @@ const Form = () => {
       />
       <button 
         className="form-button"
-        disabled={description ? "" : "disabled"}>
+        disabled={description ? "" : "disabled"}
+      >
         Añadir
       </button>
     </form>
