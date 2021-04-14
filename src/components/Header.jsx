@@ -12,7 +12,12 @@ const Header = (props) => {
       <div className="header">
         <h1>Tienes <span className="span-header">{props.todos.length}</span> {(props.todos.length)> 2 ? 'Tareas': 'Tarea'}</h1>
         <p className="task">Completadas:  <span className="span-header">{completed.length}</span></p>
-        <p className="task">Faltan: <span className="span-header">{incompleted.length}</span></p>
+        <p className="task">Restantes: <span className="span-header">{incompleted.length}</span></p>
+        <p className="progress-tag">Progreso:</p>
+        <progress 
+          value={completed.length}
+          max={props.todos.length}
+        ></progress>
       </div>
       <Form updateTodo={props.updateTodo} />
     </div>

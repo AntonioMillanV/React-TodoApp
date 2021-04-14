@@ -1,10 +1,52 @@
 .header {
-  display: inline;
-  text-align: center;
+  display: flex;
+  flex-direction:  column;
+  align-items: center;
+  line-height: 10px;
 }
 
 .card-header {
   margin: 10px;
   box-shadow: 0 8px 5px -5px rgba(140, 150, 150, 0.3);
   
+}
+
+.span-header{
+  color: green;
+}
+
+.task{
+  color: gray;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.progress-tag{
+  font-weight: bold;
+  color: rgb(77, 155, 74);
+}
+
+progress[value]{
+  /* background-color: green; */
+  border-radius: 10px;
+}
+
+progress[value]::-webkit-progress-bar  {
+  background-color: #eee;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress[value]::-webkit-progress-value {
+  background-image:
+	   -webkit-linear-gradient(-45deg, 
+	                           transparent 33%, rgba(0, 0, 0, 0.233) 33%, 
+	                           rgba(0,0, 0, .1) 66%, transparent 66%),
+	   -webkit-linear-gradient(top, 
+	                           rgba(165, 165, 165, 0.479), 
+	                           rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, rgb(73, 209, 255), rgb(255, 145, 0));
+
+    border-radius: 10px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
 }
